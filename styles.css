@@ -1,0 +1,326 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.geometry-group {
+    position: absolute;
+    width: 100%; /* Ensure it spans the full width of its parent */
+    height: 100%; /* Ensure it spans the full height of its parent */
+    top: 0;
+    left: 0;
+    justify-content: center; /* Not necessary unless using flex, but kept for reference */
+}
+
+/* Example positioning for a group, adjust as necessary */
+.geometry-group .circle {
+    margin: 0 10px;
+}
+
+/* You might need to adjust positions or use CSS Grid/Flexbox to align the groups symmetrically around the central circle */
+
+/* Continue using the basic reset and body, html, and nav styles */
+
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background: rgb(39,0,196);
+    background: radial-gradient(circle, rgba(39,0,196,1) 0%, rgba(0,0,40,1) 100%);
+    overflow: hidden;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.flower-of-life {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    animation: spin 20s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto; /* Center the SVG in its container */
+    /* Ensure the rotation is around the center */
+    transform-origin: center;
+}
+
+
+.circle {
+    width: 77px; /* Adjust size as desired */
+    height: 77px; /* Adjust size as desired */
+    border-radius: 50%;
+    position: absolute;
+    display: flex; /* Enables flexbox properties */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 48px;
+    overflow: hidden; /* Prevents content from spilling out */
+}
+
+/* Central circle fixed positioning */
+.central {
+    width: 222px !important;
+    height: 222px !important;
+    border-radius: 50%;
+    background-color: #0d102d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #000e8d;
+
+    .central-logo {
+        width: 77%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Adjust positions of orbiting circles using top and left */
+.circle00 {
+    /* Directly above the central circle */
+    top: calc(51% - 115px); 
+    left: calc(50% - 3px); 
+    background-color: aqua;
+    border: 3px solid rgb(0, 205, 205);
+}
+.circle01 {
+    /* Top right */
+    top: calc(50% - 60px); 
+    left: calc(50% + 55px); 
+    background-color: blueviolet;
+    border: 3px solid rgb(110, 19, 195);
+}
+.circle02 {
+    /* Bottom right */
+    top: calc(45% + 35px); 
+    left: calc(50% + 20px); 
+    background-color: burlywood;
+    border: 3px solid rgb(192, 151, 98);
+}
+.circle03 {
+    /* Bottom left */
+    top: calc(45% + 35px); 
+    left: calc(50% - 35px); 
+    background-color: chocolate;
+    border: 3px solid rgb(176, 80, 12);
+}
+.circle04 {
+    /* Top left */
+    top: calc(50% - 60px); 
+    left: calc(50% - 60px); 
+    background-color: olivedrab;
+    border: 3px solid rgb(79, 109, 17);
+}
+
+/* Second Orbit (Inner Orbit) */
+.circle10 { /* Directly above */
+    top: calc(50% - 100px);
+    left: 44%;
+    background-color: coral;
+    border: 3px solid rgb(226, 100, 55);
+    transform: translateX(-35%);
+}
+.circle11 { /* Top right */
+    top: calc(45% - 35px);
+    left: calc(44% + 55px);
+    background-color: cyan;
+    border: 3px solid rgb(0, 205, 205);
+    transform: translateX(-35%);
+}
+.circle12 { /* Bottom right */
+    top: calc(40% + 50px);
+    left: calc(45% + 55px);
+    background-color: darkorange;
+    border: 3px solid rgb(207, 114, 2);
+    transform: translateX(-35%);
+}
+.circle13 { /* Bottom left */
+    top: calc(45% + 50px);
+    left: 45%;
+    background-color: deeppink;
+    border: 3px solid rgb(199, 1, 107);
+    transform: translateX(-35%);
+}
+.circle14 { /* Top left */
+    top: calc(42% + 50px);
+    left: calc(44% - 25px);
+    background-color: gold;
+    border: 3px solid rgb(216, 183, 0);
+    transform: translateX(-35%);
+}
+.circle15 { /* Top left */
+    top: calc(42% + 5px);
+    left: calc(44% - 50px);
+    background-color: blanchedalmond;
+    border: 3px solid rgb(214, 185, 141);
+    transform: translateX(-35%);
+}
+
+/* Outer Orbit Set 1 (Largest Orbit) */
+.circle20 { /* Directly above */
+    top: calc(50% - 180px);
+    left: 50%;
+    background-color: lightseagreen;
+    border: 3px solid rgb(0, 157, 157);
+    transform: translateX(-50%);
+}
+.circle21 { /* Top right */
+    top: calc(34% - 25px);
+    left: calc(52% + 25px);
+    background-color: mediumslateblue;
+    border: 3px solid rgb(82, 61, 197);
+    transform: translateX(-50%);
+}
+.circle22 { /* Bottom right */
+    top: calc(34% + 25px);
+    left: calc(52% + 24px);
+    background-color: navy;
+    border: 3px solid rgb(17, 17, 177);
+    transform: translateX(-50%);
+}
+.circle23 { /* Bottom left */
+    top: calc(34% + 40px);
+    left: 50%;
+    background-color: orchid;
+    border: 3px solid rgb(175, 69, 172);
+    transform: translateX(-50%);
+}
+.circle24 { /* Top left */
+    top: calc(31% + 2px);
+    left: calc(48% - 15px);
+    background-color: palevioletred;
+    border: 3px solid rgb(171, 71, 105);
+    transform: translateX(-50%);
+}
+.circle25 { /* Top left */
+    top: calc(34% + 20px);
+    left: calc(48% - 5px);
+    background-color: lightsteelblue;
+    border: 3px solid rgb(112, 143, 183);
+    transform: translateX(-50%);
+}
+/* Outer Orbit Set 2 (Largest Orbit) */
+.circle26 { /* Directly above */
+    top: calc(50% - 180px);
+    left: 50%;
+    background-color: rgb(32, 69, 178);
+    border: 3px solid rgb(16, 48, 144);
+    transform: translateX(-50%);
+}
+.circle27 { /* Top right */
+    top: calc(34% - 25px);
+    left: calc(52% + 25px);
+    background-color: rgb(78, 66, 145);
+    border: 3px solid rgb(53, 43, 109);
+    transform: translateX(-50%);
+}
+.circle28 { /* Bottom right */
+    top: calc(34% + 25px);
+    left: calc(52% + 24px);
+    background-color: rgb(30, 30, 255);
+    border: 3px solid rgb(13, 13, 210);
+    transform: translateX(-50%);
+}
+.circle29 { /* Bottom left */
+    top: calc(34% + 40px);
+    left: 50%;
+    background-color: rgb(129, 63, 165);
+    border: 3px solid rgb(92, 34, 124);
+    transform: translateX(-50%);
+}
+.circle30 { /* Top left */
+    top: calc(31% + 2px);
+    left: calc(48% - 15px);
+    background-color: rgb(108, 48, 68);
+    border: 3px solid rgb(92, 29, 50);
+    transform: translateX(-50%);
+}
+.circle31 { /* Top left */
+    top: calc(34% + 20px);
+    left: calc(48% - 5px);
+    background-color: lightsteelblue;
+    border: 3px solid rgb(112, 143, 182);
+    transform: translateX(-50%);
+}
+
+/* Orbit Animation */
+@keyframes orbit {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+}
+/* Orbit Animation */
+@keyframes orbit2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(-275px) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(-275px) rotate(-360deg);
+    }
+}
+/* Orbit Animation */
+@keyframes orbit3 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(275px) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(275px) rotate(-360deg);
+    }
+}
+/* Orbit Animation */
+@keyframes orbit4 {
+    0% {
+        transform: translate(-45%, -45%) rotate(0deg) translateX(-375px) rotate(0deg);
+    }
+    100% {
+        transform: translate(-45%, -45%) rotate(360deg) translateX(-375px) rotate(-360deg);
+    }
+}
+
+/* Apply the Orbit Animation to All Circles */
+.geometry-group .circle, .circle01, .circle02, .circle03, .circle04 {
+    animation: orbit 10s linear infinite;
+}
+/* Apply the Orbit Animation to All Circles */
+
+.circle10, .circle11, .circle12, .circle13, .circle14, .circle15 {
+    animation: orbit2 10s linear infinite;
+}
+.circle20, .circle21, .circle22, .circle23, .circle24, .circle25 {
+    animation: orbit3 10s linear infinite;
+}
+
+.circle26, .circle27, .circle28, .circle29, .circle30, .circle31 {
+    animation: orbit4 10s linear infinite;
+}
