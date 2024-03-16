@@ -1,55 +1,10 @@
-// function adjustSvgViewBox() {
-//     const heroSection = document.querySelector('.hero');
-//     const svgElement = document.querySelector('.flower-of-life');
-
-//     if (heroSection && svgElement) {
-//         // Get the dimensions of the hero section
-//         const width = heroSection.offsetWidth;
-//         const height = heroSection.offsetHeight;
-
-//         // Set the viewBox to match the hero section dimensions
-//         svgElement.setAttribute('viewBox', `0 0 ${width} ${height}`);
-//     }
-// }
-
-// function updateCircleAttributes() {
-//     const heroSection = document.querySelector('.hero');
-//     const svgElement = document.querySelector('.flower-of-life');
-//     const circles = svgElement.querySelectorAll('circle');
-
-//     if (heroSection && circles) {
-//         const scaleRatio = heroSection.offsetWidth / 400; // Assuming the original viewBox width is 400
-
-//         circles.forEach(circle => {
-//             const originalCx = parseFloat(circle.getAttribute('cx'));
-//             const originalCy = parseFloat(circle.getAttribute('cy'));
-//             const originalR = parseFloat(circle.getAttribute('r'));
-
-//             circle.setAttribute('cx', originalCx * scaleRatio);
-//             circle.setAttribute('cy', originalCy * scaleRatio);
-//             circle.setAttribute('r', originalR * scaleRatio);
-//         });
-//     }
-// }
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     adjustSvgViewBox();
-//     updateCircleAttributes(); // Call after adjusting viewBox
-// });
-
-// // window.addEventListener('resize', function() {
-// //     adjustSvgViewBox();
-// //     updateCircleAttributes(); // Call after adjusting viewBox
-// // });
-
 function generateFlowerOfLife() {
     const heroSection = document.querySelector('.hero');
     const svgElement = document.querySelector('.flower-of-life');
 
     if (heroSection && svgElement) {
         const heroWidth = heroSection.offsetWidth;
-        const centralCircleRadius = heroWidth * 0.08; // Central circle radius as 5% of hero width
+        const centralCircleRadius = heroWidth * 0.08; // Central circle radius as 8% of hero width
         const circleDistance = centralCircleRadius * 2; // Distance for the first ring of circles
         const outerCircleRadius = centralCircleRadius * 1.5; // Larger radius for outer circles
         const outerCircleDistance = circleDistance + centralCircleRadius + outerCircleRadius; // Distance for the outer ring
@@ -85,11 +40,61 @@ function createCircle(svgElement, cx, cy, r) {
     circle.setAttribute("cx", cx);
     circle.setAttribute("cy", cy);
     circle.setAttribute("r", r);
-    circle.setAttribute("stroke", "black");
+    circle.setAttribute("stroke", "rgb(0, 0, 67)");
     circle.setAttribute("stroke-width", "2");
     circle.setAttribute("fill", "none");
     svgElement.appendChild(circle);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const circles = document.querySelectorAll('.geometry-group .circle, .geometry-group-inner .circle, .geometry-group-outer1 .circle, .geometry-group-outer2 .circle');
+    let activeBubbles = [];
+
+    function showChatBubbles() {
+        // Clear out any existing bubbles before creating new ones
+        activeBubbles.forEach(bubble => bubble.remove());
+        activeBubbles = []; // Reset the array after cleanup
+
+        const numberOfBubblesToShow = Math.floor(Math.random() * 7) + 1;
+        const uniqueIndices = new Set();
+        while (uniqueIndices.size < numberOfBubblesToShow) {
+            const randomIndex = Math.floor(Math.random() * circles.length);
+            uniqueIndices.add(randomIndex);
+        }
+
+        uniqueIndices.forEach(index => {
+            const chatBubble = document.createElement('div');
+            chatBubble.textContent = '💬';
+            chatBubble.className = 'chat-bubble';
+            chatBubble.style.display = 'flex';
+            chatBubble.style.justifyContent = 'center';
+            chatBubble.style.alignItems = 'center';
+
+            const circle = circles[index];
+            circle.appendChild(chatBubble);
+            activeBubbles.push(chatBubble); // Keep track of active bubbles for later removal
+
+            const timeoutDuration = Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000;
+            setTimeout(() => {
+                const index = activeBubbles.indexOf(chatBubble);
+                if (index > -1) {
+                    activeBubbles.splice(index, 1); // Remove bubble from tracking array
+                }
+                chatBubble.remove();
+            }, timeoutDuration);
+        });
+    }
+
+    // Initial call
+    showChatBubbles();
+
+    // Regular updates
+    const intervalId = setInterval(showChatBubbles, 4000);
+
+    // Consider adding a way to clear the interval if the user navigates away or the element is removed
+    // For example, on a page navigation or component unmount in a SPA (Single Page Application)
+});
+
 
 document.addEventListener('DOMContentLoaded', generateFlowerOfLife);
 window.addEventListener('resize', generateFlowerOfLife);

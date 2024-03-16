@@ -8,14 +8,40 @@
 body, html {
     height: 100%;
     font-family: Arial, sans-serif;
+    color: #c4c5ca;
 }
 
 nav {
     width: 100%;
-    background-color: #333;
+    background: rgb(6,15,47);
+background: radial-gradient(circle, rgba(6,15,47,1) 0%, rgba(12,18,41,1) 100%);
     color: white;
     text-align: center;
-    padding: 1em 0;
+    padding: 1.5em 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9em 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.nav-logo img {
+    height: 50px; /* Adjust based on your logo's size */
+}
+
+.nav-title {
+    font-size: 24px;
+    margin-left: 20px; /* Space between logo and title */
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px; /* Space between menu items */
 }
 
 .geometry-group {
@@ -42,9 +68,9 @@ nav {
     justify-content: center;
     align-items: center;
     height: 90vh;
-    background: rgb(39,0,196);
-    background: radial-gradient(circle, rgba(39,0,196,1) 0%, rgba(0,0,40,1) 100%);
     overflow: hidden;
+    background: rgb(30,45,102);
+    background: radial-gradient(circle, rgba(30,45,102,1) 0%, rgba(12,18,41,1) 100%);
 }
 
 @keyframes spin {
@@ -53,6 +79,14 @@ nav {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+@keyframes breath {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
     }
 }
 
@@ -64,7 +98,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
     margin: auto; /* Center the SVG in its container */
     /* Ensure the rotation is around the center */
     transform-origin: center;
@@ -80,7 +114,6 @@ nav {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     font-size: 48px;
-    overflow: hidden; /* Prevents content from spilling out */
 }
 
 /* Central circle fixed positioning */
@@ -93,13 +126,14 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 5px solid #000e8d;
+    border: 5px solid rgb(0, 0, 93);
 
     .central-logo {
         width: 77%;
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: 11px;
     }
 }
 
@@ -120,15 +154,15 @@ nav {
 }
 .circle02 {
     /* Bottom right */
-    top: calc(45% + 35px); 
-    left: calc(50% + 20px); 
+    top: calc(45% + 40px); 
+    left: calc(50% + 35px); 
     background-color: burlywood;
     border: 3px solid rgb(192, 151, 98);
 }
 .circle03 {
     /* Bottom left */
-    top: calc(45% + 35px); 
-    left: calc(50% - 35px); 
+    top: calc(45% + 45px); 
+    left: calc(50% - 40px); 
     background-color: chocolate;
     border: 3px solid rgb(176, 80, 12);
 }
@@ -149,36 +183,36 @@ nav {
     transform: translateX(-35%);
 }
 .circle11 { /* Top right */
-    top: calc(45% - 35px);
-    left: calc(44% + 55px);
+    top: calc(45% - 30px);
+    left: calc(44% + 65px);
     background-color: cyan;
     border: 3px solid rgb(0, 205, 205);
     transform: translateX(-35%);
 }
 .circle12 { /* Bottom right */
-    top: calc(40% + 50px);
-    left: calc(45% + 55px);
+    top: calc(40% + 75px);
+    left: calc(45% + 60px);
     background-color: darkorange;
     border: 3px solid rgb(207, 114, 2);
     transform: translateX(-35%);
 }
 .circle13 { /* Bottom left */
-    top: calc(45% + 50px);
+    top: calc(45% + 75px);
     left: 45%;
     background-color: deeppink;
     border: 3px solid rgb(199, 1, 107);
     transform: translateX(-35%);
 }
 .circle14 { /* Top left */
-    top: calc(42% + 50px);
-    left: calc(44% - 25px);
+    top: calc(42% + 70px);
+    left: calc(44% - 45px);
     background-color: gold;
     border: 3px solid rgb(216, 183, 0);
     transform: translateX(-35%);
 }
 .circle15 { /* Top left */
-    top: calc(42% + 5px);
-    left: calc(44% - 50px);
+    top: calc(42%);
+    left: calc(44% - 60px);
     background-color: blanchedalmond;
     border: 3px solid rgb(214, 185, 141);
     transform: translateX(-35%);
@@ -193,36 +227,36 @@ nav {
     transform: translateX(-50%);
 }
 .circle21 { /* Top right */
-    top: calc(34% - 25px);
+    top: calc(34% - 15px);
     left: calc(52% + 25px);
     background-color: mediumslateblue;
     border: 3px solid rgb(82, 61, 197);
     transform: translateX(-50%);
 }
 .circle22 { /* Bottom right */
-    top: calc(34% + 25px);
-    left: calc(52% + 24px);
+    top: calc(36% + 35px);
+    left: calc(52% + 25px);
     background-color: navy;
     border: 3px solid rgb(17, 17, 177);
     transform: translateX(-50%);
 }
 .circle23 { /* Bottom left */
-    top: calc(34% + 40px);
-    left: 50%;
+    top: calc(35% + 65px);
+    left: calc(50%);
     background-color: orchid;
     border: 3px solid rgb(175, 69, 172);
     transform: translateX(-50%);
 }
 .circle24 { /* Top left */
     top: calc(31% + 2px);
-    left: calc(48% - 15px);
+    left: calc(48% - 25px);
     background-color: palevioletred;
     border: 3px solid rgb(171, 71, 105);
     transform: translateX(-50%);
 }
 .circle25 { /* Top left */
-    top: calc(34% + 20px);
-    left: calc(48% - 5px);
+    top: calc(34% + 45px);
+    left: calc(48% - 30px);
     background-color: lightsteelblue;
     border: 3px solid rgb(112, 143, 183);
     transform: translateX(-50%);
@@ -236,36 +270,36 @@ nav {
     transform: translateX(-50%);
 }
 .circle27 { /* Top right */
-    top: calc(34% - 25px);
-    left: calc(52% + 25px);
+    top: calc(35% - 20px);
+    left: calc(52% + 22px);
     background-color: rgb(78, 66, 145);
     border: 3px solid rgb(53, 43, 109);
     transform: translateX(-50%);
 }
 .circle28 { /* Bottom right */
-    top: calc(34% + 25px);
-    left: calc(52% + 24px);
+    top: calc(36% + 35px);
+    left: calc(52% + 5px);
     background-color: rgb(30, 30, 255);
     border: 3px solid rgb(13, 13, 210);
     transform: translateX(-50%);
 }
 .circle29 { /* Bottom left */
-    top: calc(34% + 40px);
-    left: 50%;
+    top: calc(36% + 70px);
+    left: calc(50% - 15px);
     background-color: rgb(129, 63, 165);
     border: 3px solid rgb(92, 34, 124);
     transform: translateX(-50%);
 }
 .circle30 { /* Top left */
-    top: calc(31% + 2px);
-    left: calc(48% - 15px);
+    top: calc(30% + 5px);
+    left: calc(47% - 5px);
     background-color: rgb(108, 48, 68);
     border: 3px solid rgb(92, 29, 50);
     transform: translateX(-50%);
 }
 .circle31 { /* Top left */
-    top: calc(34% + 20px);
-    left: calc(48% - 5px);
+    top: calc(35% + 35px);
+    left: calc(45% + 15px);
     background-color: lightsteelblue;
     border: 3px solid rgb(112, 143, 182);
     transform: translateX(-50%);
@@ -312,7 +346,6 @@ nav {
 .geometry-group .circle, .circle01, .circle02, .circle03, .circle04 {
     animation: orbit 10s linear infinite;
 }
-/* Apply the Orbit Animation to All Circles */
 
 .circle10, .circle11, .circle12, .circle13, .circle14, .circle15 {
     animation: orbit2 10s linear infinite;
@@ -323,4 +356,20 @@ nav {
 
 .circle26, .circle27, .circle28, .circle29, .circle30, .circle31 {
     animation: orbit4 10s linear infinite;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.chat-bubble {
+    position: absolute;
+    font-size: 42px; /* Adjust size as needed */
+    animation: popIn 0.5s ease forwards;
+    display: none; /* Initially hidden */
+    top: -8px;
+    left: 53px;
+    animation: popIn 0.5s ease forwards, breath 2s ease-in-out infinite;
 }
