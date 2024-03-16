@@ -11,7 +11,8 @@ body, html {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
     color: #c4c5ca;
-    background: rgb(6,15,47);
+    background: rgb(22 33 76);
+    /* background: radial-gradient(circle, rgba(30,45,102,1) 0%, rgba(12,18,41,1) 100%); */
 }
 
 nav {
@@ -21,6 +22,7 @@ nav {
     color: white;
     text-align: center;
     padding: 1.5em 0;
+    
 }
 
 .navbar {
@@ -67,9 +69,10 @@ nav {
     justify-content: center;
     align-items: center;
     height: 90vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     background: rgb(30,45,102);
     background: radial-gradient(circle, rgba(30,45,102,1) 0%, rgba(12,18,41,1) 100%);
+    z-index: 0;
 }
 
 @keyframes spin {
@@ -92,7 +95,7 @@ nav {
 .flower-of-life {
     width: 100%;
     height: 100%;
-    overflow: auto;
+    /* overflow: show; */
     animation: spin 20s linear infinite;
     display: flex;
     justify-content: center;
@@ -101,6 +104,7 @@ nav {
     margin: auto; /* Center the SVG in its container */
     /* Ensure the rotation is around the center */
     transform-origin: center;
+    z-index: -1;
 }
 
 
@@ -113,7 +117,7 @@ nav {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     font-size: 48px;
-    z-index: 1;
+    z-index: 2;
     /* filter: saturate(65%) brightness(85%) !important; */
 }
 
@@ -128,7 +132,7 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     border: 5px solid rgb(0, 0, 93);
-    z-index: 1;
+    z-index: 2;
 
     .central-logo {
         width: 77%;
@@ -375,3 +379,110 @@ nav {
     left: 53px;
     animation: popIn 0.5s ease forwards, breath 2s ease-in-out infinite;
 }
+
+.features-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 33px;
+    gap: 20px;
+    padding: 50px 20px;
+    position: relative;
+    /* background: linear-gradient(rgba(30,45,102,0), rgba(6, 15, 47, 0.414)); */
+    background: transparent;
+    /* background: rgba(30,45,102, 0);
+    background: radial-gradient(circle, rgba(30,45,102,1) 0%, rgba(12,18,41,1) 100%); */
+    border-radius: 111px;
+    z-index: 0;
+}
+
+.feature {
+    width: 350px;
+    height:350px;
+    border-radius: 50%;
+    /* background: radial-gradient(circle at center, rgb(55, 86, 197), rgba(6, 15, 47, 0.414)); */
+    background: radial-gradient(circle at center, rgb(32, 55, 139), rgba(6, 15, 47, 0.414));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 35px;
+    position: relative;
+    /* overflow: hidden; */
+    /* border: 3px solid navy; */
+
+    span {
+        font-size: 42px;
+    }
+    h3 {
+        font-weight: bold;
+        /* text-decoration: underline; */
+        margin-bottom: 11px;
+    }
+}
+
+/* Styling specific to team features */
+.team-feature {
+    /* Keep the general styling and add modifications for team features */
+    position: relative;
+    overflow: hidden;
+}
+
+.team-feature img {
+    width: 100%; /* Ensure the image covers the full width */
+    height: 50%; /* Image covers the top half of the circle */
+    object-fit: cover; /* Cover the designated area without distortion */
+    border-radius: 50% 50% 0 0; 
+    position: absolute;
+    top: 33px;
+}
+
+
+.team-feature h3, .team-feature h4, .team-feature p {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    padding: 0 20px; /* Padding to ensure text doesn't touch the edge */
+    z-index: 1;
+}
+
+.team-feature h3 {
+    margin-top: -45px;
+    display: flex;
+    /* bottom: 80px; Adjust based on your layout */
+}
+
+.team-feature h4 {
+    /* bottom: 60px; Adjust based on your layout */
+}
+
+.team-feature p {
+    background-color: rgb(18, 37, 107);
+    justify-content: center;
+    margin-top: 145px;
+    padding: 20px;
+}
+
+
+/* Optional: Style for the SVG background circles to be placed behind the content */
+.features-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    /* Apply the SVG circles background styling here */
+}
+
+img.zoom-out {
+    width: 100%; /* or a specific width */
+    height: auto; /* or a specific height */
+    object-fit: cover; /* Cover the area of the container without stretching */
+    transform: scale(0.8); /* Zoom out to 80% of the original size */
+  }
+  
