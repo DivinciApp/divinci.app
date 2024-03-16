@@ -114,7 +114,7 @@ nav {
     align-items: center; /* Center vertically */
     font-size: 48px;
     z-index: 1;
-    filter: saturate(65%) brightness(85%) !important;
+    /* filter: saturate(65%) brightness(85%) !important; */
 }
 
 /* Central circle fixed positioning */
