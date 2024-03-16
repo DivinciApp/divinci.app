@@ -58,10 +58,6 @@ background: radial-gradient(circle, rgba(6,15,47,1) 0%, rgba(12,18,41,1) 100%);
     margin: 0 10px;
 }
 
-/* You might need to adjust positions or use CSS Grid/Flexbox to align the groups symmetrically around the central circle */
-
-/* Continue using the basic reset and body, html, and nav styles */
-
 .hero {
     position: relative;
     display: flex;
@@ -127,6 +123,7 @@ background: radial-gradient(circle, rgba(6,15,47,1) 0%, rgba(12,18,41,1) 100%);
     left: 50%;
     transform: translate(-50%, -50%);
     border: 5px solid rgb(0, 0, 93);
+    z-index: 1;
 
     .central-logo {
         width: 77%;
