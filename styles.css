@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 /* Basic Reset */
 * {
     margin: 0;
@@ -7,14 +9,15 @@
 
 body, html {
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #c4c5ca;
+    background: rgb(6,15,47);
 }
 
 nav {
     width: 100%;
     background: rgb(6,15,47);
-background: radial-gradient(circle, rgba(6,15,47,1) 0%, rgba(12,18,41,1) 100%);
+    background: radial-gradient(circle, rgba(6,15,47,1) 0%, rgba(12,18,41,1) 100%);
     color: white;
     text-align: center;
     padding: 1.5em 0;
@@ -79,7 +82,7 @@ background: radial-gradient(circle, rgba(6,15,47,1) 0%, rgba(12,18,41,1) 100%);
 }
 @keyframes breath {
     0%, 100% {
-        transform: scale(1);
+        transform: scale(0.9);
     }
     50% {
         transform: scale(1.1);
@@ -110,6 +113,7 @@ background: radial-gradient(circle, rgba(6,15,47,1) 0%, rgba(12,18,41,1) 100%);
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     font-size: 48px;
+    z-index: 1;
 }
 
 /* Central circle fixed positioning */
