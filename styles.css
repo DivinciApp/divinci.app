@@ -17,6 +17,7 @@ body, html {
 
 body {
     padding-top: 65px; 
+    overflow-x: hidden;
 }
 
 nav {
@@ -392,7 +393,7 @@ nav {
 
 .chat-bubble {
     position: absolute;
-    font-size: 42px; /* Adjust size as needed */
+    font-size: 42px;
     animation: popIn 0.5s ease forwards;
     display: none; /* Initially hidden */
     top: -8px;
@@ -414,11 +415,12 @@ nav {
     background: radial-gradient(circle, rgba(30,45,102,1) 0%, rgba(12,18,41,1) 100%); */
     border-radius: 111px;
     z-index: 0;
+    width: 100%;
 }
 
 .feature {
-    width: 350px;
-    height:350px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     /* background: radial-gradient(circle at center, rgb(55, 86, 197), rgba(6, 15, 47, 0.414)); */
     background: radial-gradient(circle at center, rgb(32, 55, 139), rgba(6, 15, 47, 0.414));
@@ -428,9 +430,8 @@ nav {
     justify-content: center;
     text-align: center;
     padding: 35px;
-    position: relative;
-    /* overflow: hidden; */
-    /* border: 3px solid navy; */
+    position: absolute;
+    margin: 3px;
 
     span {
         font-size: 42px;
@@ -442,10 +443,36 @@ nav {
     }
 }
 
+#features {
+    margin-top: 333px;
+}
+#team {
+    margin-top: 1033px;
+}
+
+/* Position each feature in a circle */
+/* Calculate the angle and distance for each feature */
+:not(.team-feature).feature:nth-child(1) { transform: rotate(0deg) translate(300px) rotate(0deg); }
+:not(.team-feature).feature:nth-child(2) { transform: rotate(51.4286deg) translate(300px) rotate(-51.4286deg); }
+:not(.team-feature).feature:nth-child(3) { transform: rotate(102.8571deg) translate(300px) rotate(-102.8571deg); }
+:not(.team-feature).feature:nth-child(4) { transform: rotate(154.2857deg) translate(300px) rotate(-154.2857deg); }
+:not(.team-feature).feature:nth-child(5) { transform: rotate(205.7143deg) translate(300px) rotate(-205.7143deg); }
+:not(.team-feature).feature:nth-child(6) { transform: rotate(257.1429deg) translate(300px) rotate(-257.1429deg); }
+:not(.team-feature).feature:nth-child(7) { transform: rotate(360deg) translate(300px) rotate(-360deg); }
+:not(.team-feature).feature:nth-child(8) { transform: rotate(315deg) translate(300px) rotate(-315deg); }
+/* Adjust the starting position and angle increment for team features */
+.team-feature:nth-child(1) { transform: rotate(0deg) translate(500px) rotate(0deg); }
+.team-feature:nth-child(2) { transform: rotate(40deg) translate(500px) rotate(-40deg); }
+.team-feature:nth-child(3) { transform: rotate(80deg) translate(500px) rotate(-80deg); }
+.team-feature:nth-child(4) { transform: rotate(120deg) translate(500px) rotate(-120deg); }
+.team-feature:nth-child(5) { transform: rotate(160deg) translate(500px) rotate(-160deg); }
+.team-feature:nth-child(6) { transform: rotate(200deg) translate(500px) rotate(-200deg); }
+.team-feature:nth-child(7) { transform: rotate(240deg) translate(500px) rotate(-240deg); }
+.team-feature:nth-child(8) { transform: rotate(280deg) translate(500px) rotate(-280deg); }
+.team-feature:nth-child(9) { transform: rotate(320deg) translate(500px) rotate(-320deg); }
+
 /* Styling specific to team features */
 .team-feature {
-    /* Keep the general styling and add modifications for team features */
-    position: relative;
     overflow: hidden;
 }
 
@@ -470,13 +497,13 @@ nav {
 }
 
 .team-feature h3 {
-    margin-top: -45px;
+    margin-top: 0;
     display: flex;
     /* bottom: 80px; Adjust based on your layout */
 }
 
 .team-feature h4 {
-    /* bottom: 60px; Adjust based on your layout */
+    margin-top: 31px;
 }
 
 .team-feature p {
@@ -494,13 +521,17 @@ nav {
     background-color: white;
     border-radius: 2px !important;
     z-index: 1;
-    right: -138px;
+    right: -118px;
     top: -15px;
 }
 
 .bryan-bg {
     background: rgb(210,214,212);
     background: linear-gradient(90deg, rgba(210,214,212,1) 0%, rgba(141,139,138,1) 100%);
+}
+.duane-bg {
+    background: rgb(113 149 180);
+    /* background: linear-gradient(90deg, rgb(113 149 180) 0%, rgba(141,139,138,1) 100%); */
 }
 
 
@@ -527,9 +558,9 @@ img.zoom-out {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px; /* Adjust size as needed */
-    height: 500px; /* Adjust size as needed */
-    margin: 50px auto; /* Center the circle horizontally and add some margin on top and bottom */
+    width: 500px;
+    height: 500px;
+    margin: -133px auto auto auto;
     border-radius: 50%;
     background: rgb(6,15,47);
     background: radial-gradient(circle, rgb(39, 71, 187) 0%, rgba(12,18,41,1) 100%);
@@ -566,7 +597,7 @@ img.zoom-out {
     color: #ffffff; /* White text */
     text-align: center;
     padding: 20px 0;
-    margin-top: 50px; /* Space above footer */
+    margin-top: 450px;
 }
 
 .site-footer .container {
@@ -579,4 +610,39 @@ img.zoom-out {
     margin: 0;
     font-size: 16px;
     line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .features-section {
+        height: auto !important; /* Ensure override */
+    }
+
+    #features, #team {
+        margin-top: 0;
+    }
+
+    .feature, .team-feature {
+        width: 350px !important;
+        height: 350px !important;
+        position: relative !important; /* Ensure override */
+        transform: none !important; /* Remove transformations */
+        margin: 10px auto !important; /* Add margin and centering */
+    }
+
+    /* Additional resets for team features if necessary */
+    .team-feature img {
+        border-radius: 0 !important; /* Reset border-radius if needed */
+    }
+
+    .newsletter-signup {
+        margin: 50px auto auto auto;
+    }
+
+    .site-footer {
+        margin-top: 75px;
+    }
+
+    .mobile-hidden { 
+        display: none;
+    }
 }
