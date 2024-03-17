@@ -15,6 +15,10 @@ body, html {
     /* background: radial-gradient(circle, rgba(30,45,102,1) 0%, rgba(12,18,41,1) 100%); */
 }
 
+body {
+    padding-top: 65px; 
+}
+
 nav {
     width: 100%;
     background: rgb(6,15,47);
@@ -26,12 +30,28 @@ nav {
 }
 
 .navbar {
+    position: fixed; /* Keep the navbar fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between the title and menu */
+    align-items: center; /* Align items vertically */
+    padding: 0.9em 2em; /* Adjust to your preference */
+    background-color: #333; /* Or any color you prefer */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: adds shadow for depth */
+}
+
+.nav-title, .nav-menu {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0.9em 20px;
-    background-color: #333;
+}
+
+.nav-menu a {
     color: #fff;
+    text-decoration: none;
+    margin-left: 20px; /* Space between menu items */
 }
 
 .nav-logo img {
@@ -466,6 +486,23 @@ nav {
     padding: 20px;
 }
 
+.linkedin-logo {
+    width: 32px !important;
+    height: 32px !important;
+    display: flex;
+    position: relative;
+    background-color: white;
+    border-radius: 2px !important;
+    z-index: 1;
+    right: -138px;
+    top: -15px;
+}
+
+.bryan-bg {
+    background: rgb(210,214,212);
+    background: linear-gradient(90deg, rgba(210,214,212,1) 0%, rgba(141,139,138,1) 100%);
+}
+
 
 /* Optional: Style for the SVG background circles to be placed behind the content */
 .features-section::before {
@@ -486,3 +523,60 @@ img.zoom-out {
     transform: scale(0.8); /* Zoom out to 80% of the original size */
   }
   
+  .newsletter-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px; /* Adjust size as needed */
+    height: 500px; /* Adjust size as needed */
+    margin: 50px auto; /* Center the circle horizontally and add some margin on top and bottom */
+    border-radius: 50%;
+    background: rgb(6,15,47);
+    background: radial-gradient(circle, rgb(39, 71, 187) 0%, rgba(12,18,41,1) 100%);
+    overflow: hidden; /* Ensures nothing spills outside the circular shape */
+}
+
+#mc_embed_signup {
+    text-align: center; /* Center the form content */
+}
+
+#mc_embed_signup form {
+    display: inline-block;
+}
+
+#mc_embed_signup .mc-field-group input {
+    width: 80%; /* Make the email input wider */
+    padding: 10px; /* Add some padding */
+    border-radius: 25px; /* Optional: Rounded corners for the input */
+    border: 1px solid #ccc; /* Optional: Add a border to the input */
+}
+
+#mc_embed_signup .button {
+    background-color: #007bff; /* Primary button color */
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 25px; /* Rounded corners for the button */
+    color: #fff;
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.site-footer {
+    background-color: #0a192f; /* Dark blue, adjust to match your design */
+    color: #ffffff; /* White text */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px; /* Space above footer */
+}
+
+.site-footer .container {
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
