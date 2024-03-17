@@ -453,13 +453,13 @@ nav {
 /* Position each feature in a circle */
 /* Calculate the angle and distance for each feature */
 :not(.team-feature).feature:nth-child(1) { transform: rotate(0deg) translate(300px) rotate(0deg); }
-:not(.team-feature).feature:nth-child(2) { transform: rotate(51.4286deg) translate(300px) rotate(-51.4286deg); }
-:not(.team-feature).feature:nth-child(3) { transform: rotate(102.8571deg) translate(300px) rotate(-102.8571deg); }
-:not(.team-feature).feature:nth-child(4) { transform: rotate(154.2857deg) translate(300px) rotate(-154.2857deg); }
-:not(.team-feature).feature:nth-child(5) { transform: rotate(205.7143deg) translate(300px) rotate(-205.7143deg); }
-:not(.team-feature).feature:nth-child(6) { transform: rotate(257.1429deg) translate(300px) rotate(-257.1429deg); }
-:not(.team-feature).feature:nth-child(7) { transform: rotate(360deg) translate(300px) rotate(-360deg); }
+:not(.team-feature).feature:nth-child(2) { transform: rotate(51deg) translate(300px) rotate(-51deg); }
+:not(.team-feature).feature:nth-child(3) { transform: rotate(103deg) translate(300px) rotate(-103deg); }
+:not(.team-feature).feature:nth-child(4) { transform: rotate(154deg) translate(300px) rotate(-154deg); }
+:not(.team-feature).feature:nth-child(5) { transform: rotate(206deg) translate(300px) rotate(-206deg); }
+:not(.team-feature).feature:nth-child(6) { transform: rotate(257deg) translate(300px) rotate(-257deg); }
 :not(.team-feature).feature:nth-child(8) { transform: rotate(315deg) translate(300px) rotate(-315deg); }
+:not(.team-feature).feature:nth-child(7) { transform: rotate(360deg) translate(300px) rotate(-360deg); }
 /* Adjust the starting position and angle increment for team features */
 .team-feature:nth-child(1) { transform: rotate(0deg) translate(500px) rotate(0deg); }
 .team-feature:nth-child(2) { transform: rotate(40deg) translate(500px) rotate(-40deg); }
