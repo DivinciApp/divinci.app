@@ -449,6 +449,9 @@ nav {
 #team {
     margin-top: 1033px;
 }
+#expert-ai a {
+    color: white;
+}
 
 /* Position each feature in a circle */
 /* Calculate the angle and distance for each feature */
@@ -636,6 +639,12 @@ img.zoom-out {
 
     .newsletter-signup {
         margin: 50px auto auto auto;
+        width: 375px;
+        height: 375px;
+
+        h1 {
+            font-size: 26px;
+        }
     }
 
     .site-footer {
