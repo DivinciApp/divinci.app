@@ -646,6 +646,9 @@ img.zoom-out {
             font-size: 26px;
         }
     }
+    #mc_embed_signup .mc-field-group input {
+        padding: 8px;
+    }
 
     .site-footer {
         margin-top: 75px;
