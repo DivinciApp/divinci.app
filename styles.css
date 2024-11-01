@@ -63,10 +63,14 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for depth */
 }
 
+.nav-menu {
+    justify-content: flex-end;
+}
+
 .nav-title,
 .nav-menu {
     display: flex;
-    align-items: center;
+    width: inherit;
 }
 
 .nav-menu a {
@@ -78,6 +82,7 @@ nav {
 .nav-logo img,
 .nav-logo {
     height: 50px; /* Adjust based on your logo's size */
+    max-width: fit-content;
 }
 
 .nav-title {
@@ -744,6 +749,9 @@ h6,
     color: #ffffff; /* White text */
     text-align: center;
     padding: 20px 0;
+}
+
+.home.site-footer {
     margin-top: 450px;
 }
 
@@ -760,6 +768,12 @@ h6,
 }
 
 @media (max-width: 768px) {
+    main {
+        margin-top: 55px;
+    }
+    .mobile-hide {
+        display: none;
+    }
     .features-section {
         height: auto !important; /* Ensure override */
     }
