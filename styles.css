@@ -1,4 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+/* Light Theme */
+:root {
+    --background-color: #ffffff;
+    --text-color: #ffffff;
+    --primary-color: #3273dc;
+    /* Add more variables as needed */
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --primary-color: #00d1b2;
+}
 
 /* Basic Reset */
 * {
@@ -7,27 +22,31 @@
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #c4c5ca;
     background: rgb(22 33 76);
     /* background: radial-gradient(circle, rgba(30,45,102,1) 0%, rgba(12,18,41,1) 100%); */
 }
 
 body {
-    padding-top: 65px; 
+    padding-top: 65px;
     overflow-x: hidden;
 }
 
 nav {
     width: 100%;
-    background: rgb(6,15,47);
-    background: radial-gradient(circle, rgba(6,15,47,1) 0%, rgba(12,18,41,1) 100%);
+    background: rgb(6, 15, 47);
+    background: radial-gradient(
+        circle,
+        rgba(6, 15, 47, 1) 0%,
+        rgba(12, 18, 41, 1) 100%
+    );
     color: white;
     text-align: center;
     padding: 1.5em 0;
-    
 }
 
 .navbar {
@@ -41,12 +60,17 @@ nav {
     align-items: center; /* Align items vertically */
     padding: 0.9em 2em; /* Adjust to your preference */
     background-color: #333; /* Or any color you prefer */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: adds shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for depth */
 }
 
-.nav-title, .nav-menu {
+.nav-menu {
+    justify-content: flex-end;
+}
+
+.nav-title,
+.nav-menu {
     display: flex;
-    align-items: center;
+    width: inherit;
 }
 
 .nav-menu a {
@@ -55,8 +79,10 @@ nav {
     margin-left: 20px; /* Space between menu items */
 }
 
-.nav-logo img {
+.nav-logo img,
+.nav-logo {
     height: 50px; /* Adjust based on your logo's size */
+    max-width: fit-content;
 }
 
 .nav-title {
@@ -91,8 +117,12 @@ nav {
     align-items: center;
     height: 90vh;
     /* overflow: hidden; */
-    background: rgb(30,45,102);
-    background: radial-gradient(circle, rgba(30,45,102,1) 0%, rgba(12,18,41,1) 100%);
+    background: rgb(30, 45, 102);
+    background: radial-gradient(
+        circle,
+        rgba(30, 45, 102, 1) 0%,
+        rgba(12, 18, 41, 1) 100%
+    );
     z-index: 0;
 }
 
@@ -105,7 +135,8 @@ nav {
     }
 }
 @keyframes breath {
-    0%, 100% {
+    0%,
+    100% {
         transform: scale(0.9);
     }
     50% {
@@ -127,7 +158,6 @@ nav {
     transform-origin: center;
     z-index: -1;
 }
-
 
 .circle {
     width: 77px; /* Adjust size as desired */
@@ -167,77 +197,83 @@ nav {
 /* Adjust positions of orbiting circles using top and left */
 .circle00 {
     /* Directly above the central circle */
-    top: calc(51% - 115px); 
-    left: calc(50% - 3px); 
+    top: calc(51% - 115px);
+    left: calc(50% - 3px);
     background-color: aqua;
     border: 3px solid rgb(0, 205, 205);
 }
 .circle01 {
     /* Top right */
-    top: calc(50% - 60px); 
-    left: calc(50% + 55px); 
+    top: calc(50% - 60px);
+    left: calc(50% + 55px);
     background-color: blueviolet;
     border: 3px solid rgb(110, 19, 195);
 }
 .circle02 {
     /* Bottom right */
-    top: calc(45% + 40px); 
-    left: calc(50% + 35px); 
+    top: calc(45% + 40px);
+    left: calc(50% + 35px);
     background-color: burlywood;
     border: 3px solid rgb(192, 151, 98);
 }
 .circle03 {
     /* Bottom left */
-    top: calc(45% + 45px); 
-    left: calc(50% - 40px); 
+    top: calc(45% + 45px);
+    left: calc(50% - 40px);
     background-color: chocolate;
     border: 3px solid rgb(176, 80, 12);
 }
 .circle04 {
     /* Top left */
-    top: calc(50% - 60px); 
-    left: calc(50% - 60px); 
+    top: calc(50% - 60px);
+    left: calc(50% - 60px);
     background-color: olivedrab;
     border: 3px solid rgb(79, 109, 17);
 }
 
 /* Second Orbit (Inner Orbit) */
-.circle10 { /* Directly above */
+.circle10 {
+    /* Directly above */
     top: calc(50% - 100px);
     left: 44%;
     background-color: coral;
     border: 3px solid rgb(226, 100, 55);
     transform: translateX(-35%);
 }
-.circle11 { /* Top right */
+.circle11 {
+    /* Top right */
     top: calc(45% - 30px);
     left: calc(44% + 65px);
     background-color: cyan;
     border: 3px solid rgb(0, 205, 205);
     transform: translateX(-35%);
 }
-.circle12 { /* Bottom right */
+.circle12 {
+    /* Bottom right */
     top: calc(40% + 75px);
     left: calc(45% + 60px);
     background-color: darkorange;
     border: 3px solid rgb(207, 114, 2);
     transform: translateX(-35%);
 }
-.circle13 { /* Bottom left */
+.circle13 {
+    /* Bottom left */
     top: calc(45% + 75px);
     left: 45%;
     background-color: deeppink;
     border: 3px solid rgb(199, 1, 107);
     transform: translateX(-35%);
 }
-.circle14 { /* Top left */
+.circle14 {
+    /* Top left */
     top: calc(42% + 70px);
     left: calc(44% - 45px);
     background-color: gold;
     border: 3px solid rgb(216, 183, 0);
     transform: translateX(-35%);
 }
-.circle15 { /* Top left */
+.circle15 {
+    /* Top left */
     top: calc(42%);
     left: calc(44% - 60px);
     background-color: blanchedalmond;
@@ -246,42 +282,48 @@ nav {
 }
 
 /* Outer Orbit Set 1 (Largest Orbit) */
-.circle20 { /* Directly above */
+.circle20 {
+    /* Directly above */
     top: calc(50% - 180px);
     left: 50%;
     background-color: lightseagreen;
     border: 3px solid rgb(0, 157, 157);
     transform: translateX(-50%);
 }
-.circle21 { /* Top right */
+.circle21 {
+    /* Top right */
     top: calc(34% - 15px);
     left: calc(52% + 25px);
     background-color: mediumslateblue;
     border: 3px solid rgb(82, 61, 197);
     transform: translateX(-50%);
 }
-.circle22 { /* Bottom right */
+.circle22 {
+    /* Bottom right */
     top: calc(36% + 35px);
     left: calc(52% + 25px);
     background-color: navy;
     border: 3px solid rgb(17, 17, 177);
     transform: translateX(-50%);
 }
-.circle23 { /* Bottom left */
+.circle23 {
+    /* Bottom left */
     top: calc(35% + 65px);
     left: calc(50%);
     background-color: orchid;
     border: 3px solid rgb(175, 69, 172);
     transform: translateX(-50%);
 }
-.circle24 { /* Top left */
+.circle24 {
+    /* Top left */
     top: calc(31% + 2px);
     left: calc(48% - 25px);
     background-color: palevioletred;
     border: 3px solid rgb(171, 71, 105);
     transform: translateX(-50%);
 }
-.circle25 { /* Top left */
+.circle25 {
+    /* Top left */
     top: calc(34% + 45px);
     left: calc(48% - 30px);
     background-color: lightsteelblue;
@@ -289,42 +331,48 @@ nav {
     transform: translateX(-50%);
 }
 /* Outer Orbit Set 2 (Largest Orbit) */
-.circle26 { /* Directly above */
+.circle26 {
+    /* Directly above */
     top: calc(50% - 180px);
     left: 50%;
     background-color: rgb(32, 69, 178);
     border: 3px solid rgb(16, 48, 144);
     transform: translateX(-50%);
 }
-.circle27 { /* Top right */
+.circle27 {
+    /* Top right */
     top: calc(35% - 20px);
     left: calc(52% + 22px);
     background-color: rgb(78, 66, 145);
     border: 3px solid rgb(53, 43, 109);
     transform: translateX(-50%);
 }
-.circle28 { /* Bottom right */
+.circle28 {
+    /* Bottom right */
     top: calc(36% + 35px);
     left: calc(52% + 5px);
     background-color: rgb(30, 30, 255);
     border: 3px solid rgb(13, 13, 210);
     transform: translateX(-50%);
 }
-.circle29 { /* Bottom left */
+.circle29 {
+    /* Bottom left */
     top: calc(36% + 70px);
     left: calc(50% - 15px);
     background-color: rgb(129, 63, 165);
     border: 3px solid rgb(92, 34, 124);
     transform: translateX(-50%);
 }
-.circle30 { /* Top left */
+.circle30 {
+    /* Top left */
     top: calc(30% + 5px);
     left: calc(47% - 5px);
     background-color: rgb(108, 48, 68);
     border: 3px solid rgb(92, 29, 50);
     transform: translateX(-50%);
 }
-.circle31 { /* Top left */
+.circle31 {
+    /* Top left */
     top: calc(35% + 35px);
     left: calc(45% + 15px);
     background-color: lightsteelblue;
@@ -335,60 +383,95 @@ nav {
 /* Orbit Animation */
 @keyframes orbit {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateX(200px)
+            rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateX(200px)
+            rotate(-360deg);
     }
 }
 /* Orbit Animation */
 @keyframes orbit2 {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateX(-275px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateX(-275px)
+            rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateX(-275px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateX(-275px)
+            rotate(-360deg);
     }
 }
 /* Orbit Animation */
 @keyframes orbit3 {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateX(275px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateX(275px)
+            rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateX(275px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateX(275px)
+            rotate(-360deg);
     }
 }
 /* Orbit Animation */
 @keyframes orbit4 {
     0% {
-        transform: translate(-45%, -45%) rotate(0deg) translateX(-375px) rotate(0deg);
+        transform: translate(-45%, -45%) rotate(0deg) translateX(-375px)
+            rotate(0deg);
     }
     100% {
-        transform: translate(-45%, -45%) rotate(360deg) translateX(-375px) rotate(-360deg);
+        transform: translate(-45%, -45%) rotate(360deg) translateX(-375px)
+            rotate(-360deg);
     }
 }
 
 /* Apply the Orbit Animation to All Circles */
-.geometry-group .circle, .circle01, .circle02, .circle03, .circle04 {
+.geometry-group .circle,
+.circle01,
+.circle02,
+.circle03,
+.circle04 {
     animation: orbit 10s linear infinite;
 }
 
-.circle10, .circle11, .circle12, .circle13, .circle14, .circle15 {
+.circle10,
+.circle11,
+.circle12,
+.circle13,
+.circle14,
+.circle15 {
     animation: orbit2 10s linear infinite;
 }
-.circle20, .circle21, .circle22, .circle23, .circle24, .circle25 {
+.circle20,
+.circle21,
+.circle22,
+.circle23,
+.circle24,
+.circle25 {
     animation: orbit3 10s linear infinite;
 }
 
-.circle26, .circle27, .circle28, .circle29, .circle30, .circle31 {
+.circle26,
+.circle27,
+.circle28,
+.circle29,
+.circle30,
+.circle31 {
     animation: orbit4 10s linear infinite;
 }
 
 @keyframes popIn {
-    0% { transform: scale(0); opacity: 0; }
-    50% { transform: scale(1.2); opacity: 1; }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .chat-bubble {
@@ -398,7 +481,9 @@ nav {
     display: none; /* Initially hidden */
     top: -8px;
     left: 53px;
-    animation: popIn 0.5s ease forwards, breath 2s ease-in-out infinite;
+    animation:
+        popIn 0.5s ease forwards,
+        breath 2s ease-in-out infinite;
 }
 
 .features-section {
@@ -423,7 +508,11 @@ nav {
     height: 300px;
     border-radius: 50%;
     /* background: radial-gradient(circle at center, rgb(55, 86, 197), rgba(6, 15, 47, 0.414)); */
-    background: radial-gradient(circle at center, rgb(32, 55, 139), rgba(6, 15, 47, 0.414));
+    background: radial-gradient(
+        circle at center,
+        rgb(32, 55, 139),
+        rgba(6, 15, 47, 0.414)
+    );
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -455,24 +544,58 @@ nav {
 
 /* Position each feature in a circle */
 /* Calculate the angle and distance for each feature */
-:not(.team-feature).feature:nth-child(1) { transform: rotate(0deg) translate(300px) rotate(0deg); }
-:not(.team-feature).feature:nth-child(2) { transform: rotate(51deg) translate(300px) rotate(-51deg); }
-:not(.team-feature).feature:nth-child(3) { transform: rotate(103deg) translate(300px) rotate(-103deg); }
-:not(.team-feature).feature:nth-child(4) { transform: rotate(154deg) translate(300px) rotate(-154deg); }
-:not(.team-feature).feature:nth-child(5) { transform: rotate(206deg) translate(300px) rotate(-206deg); }
-:not(.team-feature).feature:nth-child(6) { transform: rotate(257deg) translate(300px) rotate(-257deg); }
-:not(.team-feature).feature:nth-child(8) { transform: rotate(315deg) translate(300px) rotate(-315deg); }
-:not(.team-feature).feature:nth-child(7) { transform: rotate(360deg) translate(300px) rotate(-360deg); }
+:not(.team-feature).feature:nth-child(1) {
+    transform: rotate(0deg) translate(300px) rotate(0deg);
+}
+:not(.team-feature).feature:nth-child(2) {
+    transform: rotate(51deg) translate(300px) rotate(-51deg);
+}
+:not(.team-feature).feature:nth-child(3) {
+    transform: rotate(103deg) translate(300px) rotate(-103deg);
+}
+:not(.team-feature).feature:nth-child(4) {
+    transform: rotate(154deg) translate(300px) rotate(-154deg);
+}
+:not(.team-feature).feature:nth-child(5) {
+    transform: rotate(206deg) translate(300px) rotate(-206deg);
+}
+:not(.team-feature).feature:nth-child(6) {
+    transform: rotate(257deg) translate(300px) rotate(-257deg);
+}
+:not(.team-feature).feature:nth-child(8) {
+    transform: rotate(315deg) translate(300px) rotate(-315deg);
+}
+:not(.team-feature).feature:nth-child(7) {
+    transform: rotate(360deg) translate(300px) rotate(-360deg);
+}
 /* Adjust the starting position and angle increment for team features */
-.team-feature:nth-child(1) { transform: rotate(0deg) translate(500px) rotate(0deg); }
-.team-feature:nth-child(2) { transform: rotate(40deg) translate(500px) rotate(-40deg); }
-.team-feature:nth-child(3) { transform: rotate(80deg) translate(500px) rotate(-80deg); }
-.team-feature:nth-child(4) { transform: rotate(120deg) translate(500px) rotate(-120deg); }
-.team-feature:nth-child(5) { transform: rotate(160deg) translate(500px) rotate(-160deg); }
-.team-feature:nth-child(6) { transform: rotate(200deg) translate(500px) rotate(-200deg); }
-.team-feature:nth-child(7) { transform: rotate(240deg) translate(500px) rotate(-240deg); }
-.team-feature:nth-child(8) { transform: rotate(280deg) translate(500px) rotate(-280deg); }
-.team-feature:nth-child(9) { transform: rotate(320deg) translate(500px) rotate(-320deg); }
+.team-feature:nth-child(1) {
+    transform: rotate(0deg) translate(500px) rotate(0deg);
+}
+.team-feature:nth-child(2) {
+    transform: rotate(40deg) translate(500px) rotate(-40deg);
+}
+.team-feature:nth-child(3) {
+    transform: rotate(80deg) translate(500px) rotate(-80deg);
+}
+.team-feature:nth-child(4) {
+    transform: rotate(120deg) translate(500px) rotate(-120deg);
+}
+.team-feature:nth-child(5) {
+    transform: rotate(160deg) translate(500px) rotate(-160deg);
+}
+.team-feature:nth-child(6) {
+    transform: rotate(200deg) translate(500px) rotate(-200deg);
+}
+.team-feature:nth-child(7) {
+    transform: rotate(240deg) translate(500px) rotate(-240deg);
+}
+.team-feature:nth-child(8) {
+    transform: rotate(280deg) translate(500px) rotate(-280deg);
+}
+.team-feature:nth-child(9) {
+    transform: rotate(320deg) translate(500px) rotate(-320deg);
+}
 
 /* Styling specific to team features */
 .team-feature {
@@ -483,13 +606,14 @@ nav {
     width: 100%; /* Ensure the image covers the full width */
     height: 50%; /* Image covers the top half of the circle */
     object-fit: cover; /* Cover the designated area without distortion */
-    border-radius: 50% 50% 0 0; 
+    border-radius: 50% 50% 0 0;
     position: absolute;
     top: 33px;
 }
 
-
-.team-feature h3, .team-feature h4, .team-feature p {
+.team-feature h3,
+.team-feature h4,
+.team-feature p {
     display: flex;
     position: absolute;
     width: 100%;
@@ -529,18 +653,21 @@ nav {
 }
 
 .bryan-bg {
-    background: rgb(210,214,212);
-    background: linear-gradient(90deg, rgba(210,214,212,1) 0%, rgba(141,139,138,1) 100%);
+    background: rgb(210, 214, 212);
+    background: linear-gradient(
+        90deg,
+        rgba(210, 214, 212, 1) 0%,
+        rgba(141, 139, 138, 1) 100%
+    );
 }
 .duane-bg {
     background: rgb(113 149 180);
     /* background: linear-gradient(90deg, rgb(113 149 180) 0%, rgba(141,139,138,1) 100%); */
 }
 
-
 /* Optional: Style for the SVG background circles to be placed behind the content */
 .features-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -555,9 +682,9 @@ img.zoom-out {
     height: auto; /* or a specific height */
     object-fit: cover; /* Cover the area of the container without stretching */
     transform: scale(0.8); /* Zoom out to 80% of the original size */
-  }
-  
-  .newsletter-signup {
+}
+
+.newsletter-signup {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -565,9 +692,31 @@ img.zoom-out {
     height: 500px;
     margin: -133px auto auto auto;
     border-radius: 50%;
-    background: rgb(6,15,47);
-    background: radial-gradient(circle, rgb(39, 71, 187) 0%, rgba(12,18,41,1) 100%);
+    background: rgb(6, 15, 47);
+    background: radial-gradient(
+        circle,
+        rgb(39, 71, 187) 0%,
+        rgba(12, 18, 41, 1) 100%
+    );
     overflow: hidden; /* Ensures nothing spills outside the circular shape */
+}
+
+.title,
+.subtitle,
+strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    color: var(--text-color);
 }
 
 #mc_embed_signup {
@@ -600,6 +749,9 @@ img.zoom-out {
     color: #ffffff; /* White text */
     text-align: center;
     padding: 20px 0;
+}
+
+.home.site-footer {
     margin-top: 450px;
 }
 
@@ -616,15 +768,23 @@ img.zoom-out {
 }
 
 @media (max-width: 768px) {
+    main {
+        margin-top: 55px;
+    }
+    .mobile-hide {
+        display: none;
+    }
     .features-section {
         height: auto !important; /* Ensure override */
     }
 
-    #features, #team {
+    #features,
+    #team {
         margin-top: 0;
     }
 
-    .feature, .team-feature {
+    .feature,
+    .team-feature {
         width: 350px !important;
         height: 350px !important;
         position: relative !important; /* Ensure override */
@@ -654,7 +814,7 @@ img.zoom-out {
         margin-top: 75px;
     }
 
-    .mobile-hidden { 
+    .mobile-hidden {
         display: none;
     }
 }
